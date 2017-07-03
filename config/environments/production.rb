@@ -80,6 +80,16 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: ENV.fetch('paperclip-avatar'),
+      access_key_id: ENV.fetch('AKIAINEKVYG4IQMRMYGA'),
+      secret_access_key: ENV.fetch('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'),
+      s3_region: ENV.fetch('US West (Oregon)'),
+    }
+  }
+
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
