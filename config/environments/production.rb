@@ -90,10 +90,6 @@ Rails.application.configure do
     }
   }
 
-  AWS::S3::Base.establish_connection!(
-   :access_key_id   => ENV['S3_KEY'],
-   :secret_access_key => ENV['S3_SECRET']
-  )
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
