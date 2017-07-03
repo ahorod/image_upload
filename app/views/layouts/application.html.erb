@@ -17,7 +17,9 @@
        <li>
          <%= current_user.email %>
        </li>
-  
+       <li class="round-image-50">
+      <%= image_tag current_user.avatar.url(:thumb) %></li>
+
        <li>
          <%= link_to 'Edit Account', edit_user_registration_path %>
        </li>
